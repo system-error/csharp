@@ -9,7 +9,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            string filePath = @"E:\Users\PRESENTATION\source\repos\BlackFriday1.csv";
+            string filePath = @"path_of_the_file\BlackFriday1.csv";
             using (StreamReader sr = new StreamReader(filePath))
             {
                 string strline = "";
