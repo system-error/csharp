@@ -83,6 +83,4 @@ namespace ConsoleApp1
             } 
     }
 }
-
-
 //string filePath = @"path_of_the_file\BlackFriday1.csv";
