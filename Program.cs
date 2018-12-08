@@ -9,7 +9,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            string filePath = @"path_of_the_file\BlackFriday1.csv";
+            string filePath = @"path_of_the_file\BlackFriday.csv";
             using (StreamReader sr = new StreamReader(filePath))
             {
                 string strline = "";
@@ -34,6 +34,7 @@ namespace ConsoleApp1
                         listOfColumns.Add(new takeTheColums { ages = _values[3], productsSold = int.Parse(_values[8]), purchases = int.Parse(_values[11]) });     
                     }
                 }
+                
                 //string gaes = listOfAges[0].ages;
 
                 //Console.WriteLine(gaes);
@@ -54,35 +55,32 @@ namespace ConsoleApp1
                     {
                         var nextAge = listOfColumns[j].ages;
                         if (previousAge.Equals(nextAge))
-                        {
-                            
+                        {  
                             counter += 1;
                             total += listOfColumns[j].purchases;
-                            Console.WriteLine("The previous age is {0} and the next age is {1}", previousAge, nextAge);
+                            //Console.WriteLine("The previous age is {0} and the next age is {1}", previousAge, nextAge);
                             listOfColumns.RemoveAt(j);
-
-
                         }
                         else { j++; }
                     }
                     average = total / counter;
+                    Console.WriteLine("The average of ages between {0} is: {1}", previousAge,average);
                 }
-                
-                
+                Console.WriteLine("Finished!");
+
+
                 /*foreach (int z in listOfColumns[].productsSold)
                 {
                     sum += z;
                 }*/
 
+               //for (int y=0; y<listOfProductsSold.count; y++)
+               //{
+               //    sum += listOfProductsSold[y];                  works with for loop too  
+               //}
+               //console.writeline("the total products are: " + sum);
 
-
-                //for (int y=0; y<listOfProductsSold.count; y++)
-                //{
-                //    sum += listOfProductsSold[y];                  works with for loop too  
-                //}
-                //console.writeline("the total products are: " + sum);
-
-                Console.ReadKey();
+               Console.ReadKey();
                 sr.Close();
             }
             //Console.WriteLine(sum);*/
